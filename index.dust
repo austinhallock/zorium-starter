@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <title>{title}</title>
+    <meta name="description" content="{description}">
+    <meta name="keywords" content="{keywords}">
+
+    {! mobile !}
+    <meta name="viewport" content="initial-scale=1.0, width=device-width,
+      minimum-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    {! Schema.org markup for Google+ !}
+    <meta itemprop="name" content="{name}">
+    <meta itemprop="description" content="{description}">
+    <meta itemprop="image" content="{icon256}">
+
+    {! Twitter card !}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@claydotio">
+    <meta name="twitter:creator" content="@claydotio">
+    <meta name="twitter:title" content="{title}">
+    <meta name="twitter:description" content="{description}">
+    <meta name="twitter:image:src" content="{icon440x280}">
+
+    {! Open Graph !}
+    <meta property="og:title" content="{name}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{url}">
+    <meta property="og:image" content="{icon440x280}">
+    <meta property="og:description" content="{description}">
+    <meta property="og:site_name" content="Clay.io">
+
+    {! iOS !}
+    <link rel="apple-touch-icon" href="{icon256}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{icon76}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{icon120}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{icon152}">
+
+    {! kik !}
+    <link rel="kik-icon" href="{iconKik}">
+    <link rel="canonical" href="{canonical}">
+
+    {! misc !}
+    <link rel="shortcut icon" href="http://cdn.wtf/d/images/icons/favicon.ico">
+    <meta name="theme-color" content="#fcaa2f">
+    <link rel="terms" href="http://clay.io/tos">
+    <link rel="privacy" href="http://clay.io/privacy">
+
+    {! css !}
+    {?inlineSource}
+      <style>
+        {distcss|s}
+      </style>
+    {:else}
+      <link href="/css/bundle.css" rel="stylesheet">
+    {/inlineSource}
+  </head>
+
+  <body>
+    <div id="app"></div>
+    {?inlineSource}
+      <script>
+        {distjs|s}
+      </script>
+    {:else}
+
+    <script src="//{webpackDevHostname}:3004/js/bundle.js"></script>
+    {/inlineSource}
+  </body>
+
+</html>
